@@ -6,7 +6,7 @@ spring:
     name: registration
 
   datasource:
-    url: jdbc:sqlite:registration.db
+    url: jdbc:sqlite:/data/registration.db
     driver-class-name: org.sqlite.JDBC
 
   jpa:
