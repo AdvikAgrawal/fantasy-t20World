@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build your team</title>
+    <link rel="icon" th:href="@{/images/icon.jpeg}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav>
+        <div class="logo"><a th:href="@{/index}">Fantasy T20WC</a></div>
+        <ul class="navlink">
+        <li><a th:href="@{/teambuilder}" >Team Builder</a></li>
+        <li><a th:href="@{/yourteam}">Your Team</a></li>
+        <li><a th:href="@{/leaderboard}">League Leaderboard</a></li>
+        </ul>
+    </nav>
+<div class="container2B">
+<h2>Squad Hub </h2>
+<p>Analyse the confirmed squads of teams and choose a total of 11 players from</p>
+<label>Select a team:</label><br>
+<form class="teamSelector"action="/teambuilder" method="get">
+<select id="squads"name="squad" for="squad">
+    <option value="">---Select a Team---</option>
+</select>
+</form>
+<p id="note">NOTE: Due to injury, Josh Hazlewood will not be available for the first few games (No return timeline available).</p>
+<p><a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/news/all-the-squads-for-icc-men-s-t20-world-cup-2026">Source for all squads</a></p>
+</div>
+<span id="squadTable">
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Role</th>
+        </tr>
+        <tbody id="tableTeam">
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</span>
+
+<div class="container2B">
+<h2>Choose your team</h2>
+<p> Choose 11 players to compete in the fantasy tournament!</p>
+</div>
+<div class="container">
+    <img th:src="@{/images/cricket-background.png}" id="team-background">
+    <div class="team">
+        <button class="player-slot" data-slot="1" >
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+        <button class="player-slot" data-slot="2">
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+        <button class="player-slot" data-slot="3">
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+        <button class="player-slot" data-slot="4">
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+        <button class="player-slot" data-slot="5">
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+        <button class="player-slot" data-slot="6">
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+        <button class="player-slot" data-slot="7">
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+        <button class="player-slot" data-slot="8">
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+        <button class="player-slot" data-slot="9">
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+        <button class="player-slot" data-slot="10">
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+        <button class="player-slot" data-slot="11">
+            <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+            <span class="player-id"></span>
+        </button>
+    </div>
+    <div class="modal" id="modal">
+        <div class="innerModal">
+            <h2>Choose A Player</h2>
+            <div class="dropdown-search">
+                <input list="players" id="player-search">
+                <datalist id="players">
+                </datalist>
+            </div>  
+            <button id="closeModal">Add Player</button>
+        </div>
+    </div>
+    <button id="submitTeam" onclick="saveSquad()">Create Team</button>
+</div>
+
+<script src="/js/teambuilder.js"></script>
+</body>
+</html>

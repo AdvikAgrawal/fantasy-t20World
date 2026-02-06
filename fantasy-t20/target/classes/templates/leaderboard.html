@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="icon" th:href="@{/images/icon.jpeg}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav>
+        <div class="logo"><a th:href="@{/index}">Fantasy T20WC</a></div>
+        <ul class="navlink">
+        <li><a th:href="@{/teambuilder}" >Team Builder</a></li>
+        <li><a th:href="@{/yourteam}">Your Team</a></li>
+        <li><a th:href="@{/leaderboard}">League Leaderboard</a></li>
+        </ul>
+    </nav>
+    <h1>COMING SOON!!</h1>
+    <div class="container2B">
+    <table id="leaderboardTable">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>User</th>
+                <th>Total Points</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboardBody">
+            <!-- JS will insert rows here -->
+        </tbody>
+    </table>
+    </div>
+<script src="/js/leaderboard.js"></script>
+</body>
+</html>

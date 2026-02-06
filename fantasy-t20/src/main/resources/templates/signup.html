@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" th:href="@{/images/icon.jpeg}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body id="login-page">
+    <section id="login-section">
+        <form th:action="@{/signup}" method="post" th:object="${user}">
+            <h1>Fantasy T20WC Sign Up</h1>
+            <div class="inputbox">
+                <label for="">Name:</label>
+                <input type="text" th:field="*{username}" required>
+            </div>
+            <div class="inputbox">
+                <label for="">Email:</label>
+                <input type="email" th:field="*{email}" required>
+            </div>
+            <div th:if="${error}" class="alert-danger">
+                <p th:text="${error}"></p>
+            </div>
+            <div class="inputbox">
+                <label for="">Password:</label>
+                <input type="password" th:field="*{password}"required>
+            </div>
+            <button type="submit">Sign Up</button>
+            <div class="register">
+                <p>Already have an account? <a th:href="@{/login}">Log in</a></p>
+            </div>
+        </form>
+    </section>
+</body>
+<script src="../static/js/signup.js"></script>
+</html>

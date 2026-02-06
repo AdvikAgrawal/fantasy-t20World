@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Your Team</title>
+    <link rel="icon" th:href="@{/images/icon.jpeg}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+    <nav>
+        <div class="logo"><a th:href="@{/index}">Fantasy T20WC</a></div>
+        <ul class="navlink">
+        <li><a th:href="@{/teambuilder}" >Team Builder</a></li>
+        <li><a th:href="@{/yourteam}">Your Team</a></li>
+        <li><a th:href="@{/leaderboard}">League Leaderboard</a></li>
+        </ul>
+    </nav>
+    <div class="container2B">
+    <div class="fixtures">
+        <h1>Upcoming T20 Fixtures</h1><br>
+        <div id="fixturesContainer" class="fixturesContainer">
+            <p id="loading-text">Scanning for matches...</p>
+        </div>
+    </div> 
+    </div>
+    <h2>Your Team:</h2>
+    <div class="container">
+        <img th:src="@{/images/cricket-background.png}" id="team-background">
+        <div class="team">
+            <button class="player-slot" th:attr="data-slot=${slot.slot}" >
+                <img class="player-img" th:src="@{/images/cricket-player.png}" alt="">
+                <span class="player-id"th:text="${slot.player.playerName}"></span>
+            </button>
+            </div>
+        </div>
+    </div>
+<script src="/js/yourteam.js"></script>
+</body>
+</html>
