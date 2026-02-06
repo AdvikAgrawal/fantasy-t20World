@@ -4,9 +4,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
-
+@Component
 public class DatabaseInitialiser {
     @PostConstruct
     public void init() throws IOException {
