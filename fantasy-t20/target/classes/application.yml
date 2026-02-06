@@ -6,8 +6,9 @@ spring:
     name: registration
 
   datasource:
-    url: jdbc:sqlite:/data/registration.db
-    driver-class-name: org.sqlite.JDBC
+    url: jdbc:mysql://${MYSQLHOST}:${MYSQLPORT}:${MYSQLDATABASE}
+    username: ${MYSQLUSER}
+    password: ${MYSQLPASSWORD}
 
   jpa:
     database-platform: org.hibernate.community.dialect.SQLiteDialect
